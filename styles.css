@@ -1,107 +1,80 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #0a1f44;
-    color: white;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Encabezado */
 header {
-    background: #0077cc;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
 
-/* Menú de navegación */
-nav ul {
-    list-style: none;
-    padding: 0;
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+header p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Contenedor principal */
-.container {
-    max-width: 90%;
-    margin: auto;
+main {
     padding: 20px;
 }
 
-/* Contenedor del reproductor */
+.player-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 .player-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Imagen de perfil */
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid #00aaff;
-}
-
-/* Contenedor del reproductor */
-.player {
+    background-color: #fff;
     padding: 20px;
-    background: #003366;
     border-radius: 10px;
-    width: 100%;
-    max-width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
 }
 
-/* Imagen de portada */
-.cover-pic {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
-}
-
-/* Estilos del reproductor de audio */
 audio {
     width: 100%;
-    margin-top: 15px;
+    max-width: 400px;
+    margin-bottom: 10px;
 }
 
-/* Pie de página */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.about-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 footer {
-    margin-top: 30px;
-    padding: 20px;
-    background: #002244;
-}
-
-/* Diseño Responsivo */
-@media (min-width: 768px) {
-    .player-container {
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .player {
-        max-width: 400px;
-    }
-
-    .profile-pic {
-        width: 150px;
-        height: 150px;
-    }
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }

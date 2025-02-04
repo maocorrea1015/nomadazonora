@@ -5,6 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nómada Zonora - Radio en Vivo</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .player-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .cover-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .player {
+            text-align: center;
+        }
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,21 +116,10 @@
             <div class="player">
                 <img src="portada.png" alt="Portada de la radio" class="cover-pic">
                 <audio id="radioPlayer" controls>
-    <source src="https://uk18freenew.listen2myradio.com/live.mp3?typeportmount=s2_26530_stream_942303749" type="audio/mpeg">
-    Tu navegador no soporta el reproductor de audio.
-</audio>
-
-<button onclick="playAudio()">Reproducir</button>
-
-<script>
-    function playAudio() {
-        const audio = document.getElementById('radioPlayer');
-        audio.play().catch(error => console.error("Error al reproducir:", error));
-    }
-</script>
-
-</audio>
-
+                    <source src="https://uk18freenew.listen2myradio.com/live.mp3?typeportmount=s2_26530_stream_942303749" type="audio/mpeg">
+                    Tu navegador no soporta el reproductor de audio.
+                </audio>
+                <button onclick="playAudio()">Reproducir</button>
             </div>
         </div>
     </section>
@@ -58,9 +136,14 @@
     </section>
     
     <footer>
-        <p>&copy; 2024 Nómada Zonora - Todos los derechos reservados</p>
+        <p>© 2024 Nómada Zonora - Todos los derechos reservados</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function playAudio() {
+            const audio = document.getElementById('radioPlayer');
+            audio.play().catch(error => console.error("Error al reproducir:", error));
+        }
+    </script>
 </body>
 </html>
