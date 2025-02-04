@@ -3,76 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radio Nómada Zonora</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 42px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .player-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            width: 90%;
-            max-width: 500px;
-        }
-
-        .player-container p {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        audio {
-            width: 100%;
-            outline: none;
-        }
-
-        footer {
-            margin-top: 20px;
-            font-size: 14px;
-            opacity: 0.7;
-        }
-    </style>
+    <title>Nómada Zonora - Radio en Vivo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Nómada Zonora - Radio en Vivo</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="inicio" class="container">
+        <h2>Bienvenido a Nómada Zonora</h2>
+        <p>🎵 "Explorando sonidos sin fronteras"</p>
+        
+        <div class="player-container">
+            <img src="perfil.png" alt="Foto de perfil" class="profile-pic">
+            <div class="player">
+                <img src="portada.png" alt="Portada de la radio" class="cover-pic">
+                <audio controls>
+                    <source src="http://uk18freenew.listen2myradio.com:26530/stream" type="audio/mpeg">
+                    Tu navegador no soporta audio en streaming.
+                </audio>
+                <p>🎵 Canción actual: <span id="song-title">Cargando...</span></p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="nosotros" class="container">
+        <h2>Sobre Nosotros</h2>
+        <p>Nómada Zonora es una radio online que lleva la música más allá de las fronteras. Nuestra misión es conectar a los oyentes con una variedad de géneros y sonidos que inspiran y emocionan.</p>
+    </section>
+    
+    <section id="contacto" class="container">
+        <h2>Contacto</h2>
+        <p>Email: contacto@nomadazonora.com</p>
+        <p>Redes sociales: @NomadaZonora</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Nómada Zonora - Todos los derechos reservados</p>
+    </footer>
 
-    <h1>🎶 Radio Nómada Zonora 📻</h1>
-
-    <div class="player-container">
-        <p>Escucha nuestra transmisión en vivo:</p>
-        <audio controls autoplay>
-            <source src="https://uk18freenew.listen2myradio.com/live.mp3?typeportmount=s2_26530_stream_942303749" type="audio/mpeg">
-            Tu navegador no soporta el reproductor de audio.
-        </audio>
-    </div>
-
-    <footer>© 2024 Radio Nómada Zonora - Todos los derechos reservados.</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
