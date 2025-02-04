@@ -26,10 +26,20 @@
             <img src="perfil.png" alt="Foto de perfil" class="profile-pic">
             <div class="player">
                 <img src="portada.png" alt="Portada de la radio" class="cover-pic">
-                 <audio controls autoplay>
-            <source src="https://uk18freenew.listen2myradio.com/live.mp3?typeportmount=s2_26530_stream_942303749" type="audio/mpeg">
-            
-        </audio>
+                <audio id="radioPlayer" controls>
+    <source src="https://uk18freenew.listen2myradio.com/live.mp3?typeportmount=s2_26530_stream_942303749" type="audio/mpeg">
+    Tu navegador no soporta el reproductor de audio.
+</audio>
+
+<button onclick="playAudio()">Reproducir</button>
+
+<script>
+    function playAudio() {
+        const audio = document.getElementById('radioPlayer');
+        audio.play().catch(error => console.error("Error al reproducir:", error));
+    }
+</script>
+
 </audio>
 
             </div>
