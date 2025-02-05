@@ -3,147 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nómada Zonora - Radio en Vivo</title>
+    <title>Nómada Zonora - Radio Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .player-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-        .cover-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .player {
-            text-align: center;
-        }
-        audio {
-            width: 100%;
-            max-width: 400px;
-            margin-bottom: 10px;
-        }
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
 </head>
-<body>
-    <header>
-        <h1>Nómada Zonora - Radio en Vivo</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Sobre Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+<body class="bg-gray-200 text-gray-900 dark:bg-gray-900 dark:text-white flex flex-col items-center">
+    
+    <!-- Portada -->
+    <div class="w-full h-56 bg-cover bg-center" style="background-image: url('portada.jpg');"></div>
+
+    <!-- Perfil -->
+    <div class="relative -mt-16 w-32 h-32 border-4 border-white rounded-full overflow-hidden shadow-lg">
+        <img src="perfil.png" alt="Perfil" class="w-full h-full object-cover">
+    </div>
+
+    <!-- Título y descripción -->
+    <header class="text-center mt-4">
+        <h1 class="text-3xl font-bold">🎵 Nómada Zonora</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300">Tu radio online favorita</p>
     </header>
-    
-    <section id="inicio" class="container">
-        <h2>Bienvenido a Nómada Zonora</h2>
-        <p>🎵 "Explorando sonidos sin fronteras"</p>
+
+    <!-- Contenedor principal -->
+    <main class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-96 mt-6 text-center">
         
-        <div class="player-container">
-            <img src="perfil.png" alt="Foto de perfil" class="profile-pic">
-            <div class="player">
-                <img src="portada.png" alt="Portada de la radio" class="cover-pic">
-                <audio id="radioPlayer" controls>
-                    <source src="https://uk18freenew.listen2myradio.com/live.mp3?typeportmount=s2_26530_stream_942303749" type="audio/mpeg">
-                    Tu navegador no soporta el reproductor de audio.
-                </audio>
-                <button onclick="playAudio()">Reproducir</button>
-            </div>
-        </div>
-    </section>
-    
-    <section id="nosotros" class="container">
-        <h2>Sobre Nosotros</h2>
-        <p>Nómada Zonora es una radio online que lleva la música más allá de las fronteras. Nuestra misión es conectar a los oyentes con una variedad de géneros y sonidos que inspiran y emocionan.</p>
-    </section>
-    
-    <section id="contacto" class="container">
-        <h2>Contacto</h2>
-        <p>Email: contacto@nomadazonora.com</p>
-        <p>Redes sociales: @NomadaZonora</p>
-    </section>
-    
-    <footer>
-        <p>© 2024 Nómada Zonora - Todos los derechos reservados</p>
-    </footer>
+        <!-- Reproductor -->
+        <div class="cstrEmbed" data-type="newStreamPlayer" data-publicToken="a53f2eb5-ee5a-43f2-bb97-0c5c0054cfc9" data-theme="dark" data-color="6C2BDD" data-channelId="" data-rendered="false">
+        <a href="https://www.caster.fm">Shoutcast Hosting</a> <a href="https://www.caster.fm">Stream Hosting</a> <a href="https://www.caster.fm">Radio Server Hosting</a></div>
+        <script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
+
+
+        <!-- Botón para cambiar tema -->
+        <button id="toggle-theme" class="mt-4 px-4 py-2 bg-pink-600 text-white rounded-lg shadow-md hover:bg-pink-700 transition">
+            Cambiar Tema 🌙
+        </button>
+        <a href="https://wa.me/571234567890?text=Hola,%20quiero%20más%20información%20sobre%20Nómada%20Zonora" 
+       class="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center w-14 h-14"
+       target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+            <path fill-rule="evenodd" d="M12 2a10 10 0 00-8.516 15.39L2 22l4.718-1.28A10 10 0 1012 2zm-3.071 5.637a1.92 1.92 0 00-.514.085 3.08 3.08 0 00-1.133.514 1.48 1.48 0 00-.514 1.037c-.057.428-.085.856-.085 1.283a3.6 3.6 0 00.513 1.827c.342.57.856 1.027 1.541 1.369.085.057.143.114.172.171.028.057.028.114 0 .171-.343 1.027-.857 1.913-1.541 2.656a7.87 7.87 0 005.077 1.512c.913 0 1.827-.114 2.74-.343a7.58 7.58 0 002.913-1.284 9.12 9.12 0 002.4-2.4 6.58 6.58 0 001.313-2.913 5.99 5.99 0 00-.171-2.398c-.171-.514-.513-.856-1.027-1.027-.457-.114-.942-.057-1.369.143a6.92 6.92 0 01-1.655.513c-.456 0-.856-.114-1.312-.343a6.04 6.04 0 01-1.655-1.141c-.057-.057-.114-.057-.171-.057a1.56 1.56 0 00-.857.228c-.343.228-.628.513-.856.856-.057.085-.085.143-.085.228 0 .085 0 .143.057.228.685 1.197 1.654 2.168 2.913 2.913a5.08 5.08 0 002.4.685c.172 0 .342 0 .514-.028.171-.028.342-.057.514-.085a5.98 5.98 0 002.513-1.255c.685-.628 1.17-1.37 1.37-2.228.228-.856.057-1.712-.513-2.398-.342-.4-.856-.685-1.369-.856-.342-.114-.685-.171-1.027-.171z" clip-rule="evenodd"/>
+        </svg>
+    </a>
+    </main>
 
     <script>
-        function playAudio() {
-            const audio = document.getElementById('radioPlayer');
-            audio.play().catch(error => console.error("Error al reproducir:", error));
+        // Función para cambiar tema
+        const toggleTheme = () => {
+            if (document.documentElement.classList.contains("dark")) {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+            } else {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("theme", "dark");
+            }
+        };
+
+        // Aplicar tema guardado en localStorage
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
         }
+
+        // Evento para cambiar tema al hacer clic en el botón
+        document.getElementById("toggle-theme").addEventListener("click", toggleTheme);
     </script>
+
 </body>
 </html>
