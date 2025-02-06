@@ -27,10 +27,12 @@
     <main class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-96 mt-6 text-center">
         
         <!-- Reproductor -->
-        <audio controls autoplay>
+        <audio id="radio" controls>
   <source src="http://3.147.7.225:8000/stream" type="audio/mpeg">
   Tu navegador no soporta el elemento de audio.
 </audio>
+
+<button onclick="document.getElementById('radio').play()">Reproducir</button>
 
 
 
