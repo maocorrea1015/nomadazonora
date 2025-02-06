@@ -32,7 +32,14 @@
   Tu navegador no soporta el elemento de audio.
 </audio>
 
-<button onclick="document.getElementById('radio').play()">Reproducir</button>
+<script>
+  document.addEventListener('click', function() {
+    let audio = document.getElementById('radio');
+    if (audio.paused) {
+      audio.play().catch(error => console.log("Error al reproducir:", error));
+    }
+  }, { once: true }); // Solo ejecuta la interacción una vez
+</script>
 
 
 
