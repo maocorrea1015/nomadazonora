@@ -29,17 +29,10 @@
         <!-- Reproductor -->
         <audio id="radio" controls>
   <source src="http://3.147.7.225:8000/stream" type="audio/mpeg">
+  <source src="http://3.147.7.225:8000/stream.ogg" type="audio/ogg">
   Tu navegador no soporta el elemento de audio.
 </audio>
 
-<script>
-  document.addEventListener('click', function() {
-    let audio = document.getElementById('radio');
-    if (audio.paused) {
-      audio.play().catch(error => console.log("Error al reproducir:", error));
-    }
-  }, { once: true }); // Solo ejecuta la interacción una vez
-</script>
 
 
 
