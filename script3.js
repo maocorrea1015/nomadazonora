@@ -9,16 +9,34 @@ const programas = [
   { nombre: "Guascarrilera", inicio: "17:00", fin: "19:00" },
   { nombre: "Nomada Mixx", inicio: "19:00", fin: "20:00" },
   { nombre: "Una Noche Mas", inicio: "20:00", fin: "22:00" },
-  { nombre: "Noche Infinita", inicio: "22:00", fin: "05:00" },
+  { nombre: "Noche Infinita", inicio: "22:00", fin: "04:59" }, // Fin antes del inicio
 ];
+
+function convertirAHorasMinutos(hora) {
+  const [horas, minutos] = hora.split(":").map(Number);
+  return horas * 60 + minutos;
+}
 
 function actualizarPrograma() {
   const ahora = new Date();
-  const horaActual =
-    ahora.getHours() + ":" + ahora.getMinutes().toString().padStart(2, "0");
-  const programaActual =
-    programas.find((p) => horaActual >= p.inicio && horaActual < p.fin) ||
-    programas[0];
+  const minutosActuales = ahora.getHours() * 60 + ahora.getMinutes();
+
+  let programaActual = programas.find((p) => {
+    const inicioMin = convertirAHorasMinutos(p.inicio);
+    const finMin = convertirAHorasMinutos(p.fin);
+
+    // Caso especial: Noche Infinita (pasa la medianoche)
+    if (inicioMin > finMin) {
+      return minutosActuales >= inicioMin || minutosActuales < finMin;
+    }
+
+    return minutosActuales >= inicioMin && minutosActuales < finMin;
+  });
+
+  if (!programaActual) {
+    programaActual = programas[0]; // En caso de que no haya coincidencias
+  }
+
   document.getElementById("programaActual").textContent = programaActual.nombre;
 }
 
